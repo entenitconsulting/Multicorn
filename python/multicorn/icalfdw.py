@@ -11,7 +11,7 @@ class ICalFdw(ForeignDataWrapper):
 
     def execute(self, quals, columns):
 	ical_file = urllib.urlopen(self.url).read()
-	cal = Calendar.from_string(ical_file)
+	cal = Calendar.from_ical(ical_file)
         for v in cal.walk('vevent'):
             e = Event(v)
 	    line = {}
