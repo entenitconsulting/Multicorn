@@ -16,5 +16,5 @@ class ICalFdw(ForeignDataWrapper):
             e = Event(v)
 	    line = {}
             for column_name in self.columns:
-                line[column_name] = e.decoded(column_name)
+                line[column_name] = e.[column_name]
             yield line
